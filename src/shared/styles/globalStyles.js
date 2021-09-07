@@ -18,31 +18,15 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-size: 10px; 
   }
-  * {
-    scrollbar-width: thin;
-  }
-*::-webkit-scrollbar {
-    width: 0.3rem;
-    position:absolute;
-  }
-*::-webkit-scrollbar-track {
-    background-color: var(--light)};
-  }
-*::-webkit-scrollbar-thumb {
-    background-color: var(--grey);
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
 
-  }
   body {
     height: 100%;
     padding: 0;
     margin: 0;    
-    -webkit-tap-highlight-color: transparent;
-    
+    -webkit-tap-highlight-color: transparent;    
     font-size: 1rem;
-    background: var(--light);
+    background: rgb(80,112,150);
+background: linear-gradient(156deg, rgba(80,112,150,1) 25%, rgba(46,210,173,1) 100%);
     color: var(--darkgrey);
     font-family: 'Roboto', sans-serif;
     font-weight: normal;

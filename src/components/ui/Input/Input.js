@@ -1,31 +1,38 @@
-import React from 'react';
+import Select from 'components/ui/select';
 
 import * as s from './styles';
 
 const Input = ({
+  data,
+  handleSelect,
+  defaultValue,
   width,
-  noMargin,
   center,
   placeholder,
   type,
-  required,
-  autocomplete,
   value,
   changed,
+  withDropdown,
   error,
 }) => {
   return (
-    <s.Container width={width} noMargin={noMargin}>
+    <s.Container width={width}>
       <s.Input
         center={center}
         placeholder={placeholder}
         type={type}
-        required={required}
-        autoComplete={autocomplete}
         value={value}
+        withDropdown={withDropdown}
+        disabled={!withDropdown}
         onChange={changed}
       />
-      <s.Border></s.Border>
+      {withDropdown && (
+        <Select
+          data={data}
+          handleSelect={handleSelect}
+          defaultValue={defaultValue}
+        />
+      )}
       {error && <s.ErrorText>{error}</s.ErrorText>}
     </s.Container>
   );
