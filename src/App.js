@@ -16,8 +16,8 @@ function App() {
     if (isNaN(inputValue)) {
       return setOutputValue('?????');
     }
-    setOutputValue(parsed.toString(base));
-  }, [inputValue, base]);
+    outputValue !== '' && setOutputValue(parsed.toString(base));
+  }, [inputValue, outputValue, base]);
 
   const changeHandler = (value) => {
     const pattern = /^[0-9]*$/;
@@ -29,7 +29,7 @@ function App() {
       setError('Numbers only');
     }
   };
-
+  console.log(outputValue);
   return (
     <s.Parent justifyCenter alignCenter>
       <Input
@@ -45,10 +45,11 @@ function App() {
         error={error}
       />
       <Input
-        value={outputValue}
+        type="text"
         center={true}
         width="50rem"
         placeholder="Type something"
+        value={outputValue}
       />
     </s.Parent>
   );
