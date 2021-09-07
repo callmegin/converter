@@ -13,11 +13,12 @@ function App() {
 
   useEffect(() => {
     const parsed = parseInt(inputValue, 10);
-    isNaN(inputValue) && setOutputValue('?????');
-    inputValue.trim() !== '' && !error
+    console.log(isNaN(inputValue));
+    if (isNaN(inputValue)) return setOutputValue('?????');
+    inputValue.trim() !== ''
       ? setOutputValue(parsed.toString(base))
       : setOutputValue('Type Something');
-  }, [inputValue, outputValue, error, base]);
+  }, [inputValue, outputValue, base]);
 
   const changeHandler = (value) => {
     const pattern = /^[0-9]*$/;
