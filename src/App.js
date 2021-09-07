@@ -13,10 +13,10 @@ function App() {
 
   useEffect(() => {
     const parsed = parseInt(inputValue, 10);
-    if (isNaN(inputValue)) {
-      return setOutputValue('?????');
-    }
-    outputValue !== '' && setOutputValue(parsed.toString(base));
+    isNaN(inputValue) && setOutputValue('?????');
+    inputValue !== ''
+      ? setOutputValue(parsed.toString(base))
+      : setOutputValue('Type Something');
   }, [inputValue, outputValue, base]);
 
   const changeHandler = (value) => {
@@ -29,7 +29,7 @@ function App() {
       setError('Numbers only');
     }
   };
-  console.log(outputValue);
+
   return (
     <s.Parent justifyCenter alignCenter>
       <Input
