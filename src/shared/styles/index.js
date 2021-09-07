@@ -6,4 +6,3 @@ export {
   warningLeft,
   loading,
 } from './Animations';
-export { device } from './breakpoints';
